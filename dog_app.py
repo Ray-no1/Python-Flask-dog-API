@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from dog_api import get_dog_info
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -11,4 +12,4 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    serve(app, host='0.0.0.0', port=8000)
